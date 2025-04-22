@@ -49,9 +49,14 @@ nav ul li a {
     font-weight: bold;
 }
 
-#hero, #categories, #about, #impact, #contact, #about-details {
+#hero, #categories, #about, #impact, #contact {
     padding: 50px 20px;
     scroll-margin-top: 50px;
+}
+
+#about-details {
+    padding: 80px 20px; /* Increased padding-top for title visibility */
+    scroll-margin-top: 80px;
 }
 
 #hero {
@@ -207,7 +212,7 @@ footer p {
 }
 
 .nsf-logo {
-    max-height: 40px;
+    max-height: 30px; /* Reduced size for desktop */
 }
 
 @media (max-width: 768px) {
