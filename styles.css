@@ -234,6 +234,9 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Push content below fixed header */
+    }
     header .container {
         flex-direction: column;
         align-items: center;
