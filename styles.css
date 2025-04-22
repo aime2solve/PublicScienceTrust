@@ -132,12 +132,13 @@ nav ul li a {
 .btn {
     background: #00cc99;
     color: white;
-    padding: 10px 20px;
+    padding: 7px 18px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
     cursor: pointer;
+    font-size: 13px;
 }
 
 .btn:hover {
@@ -167,7 +168,7 @@ nav ul li a {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-rows: 30px 60px 35px 35px 35px; /* Tighter rows */
+    grid-template-rows: 30px 60px 35px 35px 35px;
     padding: 12px;
     align-content: start;
 }
@@ -185,7 +186,7 @@ nav ul li a {
     font-size: 13px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Reduced to 3 lines */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     padding: 5px 0;
     line-height: 1.3;
@@ -193,13 +194,13 @@ nav ul li a {
 
 .donation-type {
     display: flex;
-    gap: 12px;
+    gap: 16px; /* Increased for more space between buttons */
     align-items: center;
     padding: 5px 0;
 }
 
 .donation-type label {
-    font-size: 13px;
+    font-size: 12px; /* Slightly smaller */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -207,6 +208,9 @@ nav ul li a {
 
 .donation-type input[type="radio"] {
     margin-right: 4px;
+    width: 12px; /* Smaller radio button */
+    height: 12px;
+    border-radius: 8px; /* More rounded corners */
 }
 
 .donation-amount {
@@ -221,6 +225,7 @@ nav ul li a {
     padding: 7px 18px;
     font-size: 13px;
     align-self: start;
+    border-radius: 8px; /* More rounded corners for Donate button */
 }
 
 /* Progress tracker */
@@ -364,8 +369,7 @@ footer p {
 
 .nsf-logo {
     max-height: 100px;
-    background: #ccc;
-    border: 1px solid #999;
+    border: 1px solid #999; /* Kept border, removed background */
 }
 
 /* Mobile styles */
@@ -446,7 +450,7 @@ footer p {
 
     .donation-type {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px; /* Adjusted for mobile */
         padding: 5px 0;
     }
 
@@ -455,7 +459,7 @@ footer p {
     }
 
     .category-card {
-        grid-template-rows: 30px 80px 50px 35px 35px; /* Tighter for mobile */
+        grid-template-rows: 30px 80px 50px 35px 35px;
     }
 }
 
