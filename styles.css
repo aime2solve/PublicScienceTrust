@@ -22,7 +22,7 @@ body {
 header {
     background: #006666;
     color: white;
-    padding: 15px 0; /* Reduced for compact height */
+    padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -30,9 +30,9 @@ header {
 }
 
 header .container {
-    display: flex; /* Flexbox for vertical centering */
-    align-items: center; /* Center vertically */
-    justify-content: space-between; /* Logo left, nav right */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header h1 {
@@ -58,7 +58,7 @@ nav ul li a {
 
 #hero, #categories, #about, #impact, #contact {
     padding: 50px 20px;
-    scroll-margin-top: 50px;
+    scroll-margin-top: 80px; /* Match header height */
 }
 
 #about-details {
@@ -74,7 +74,11 @@ nav ul li a {
     margin-top: 0;
     display: flex;
     align-items: center;
-    padding: 50px 20px;
+    padding: 40px 20px; /* Adjusted for balance */
+}
+
+#hero .container {
+    margin-top: 50px; /* Lower text by ~50px */
 }
 
 #hero h2 {
@@ -218,17 +222,17 @@ footer p {
 }
 
 .partnership p {
-    margin-right: 15px; /* Increased for larger logo */
+    margin-right: 15px;
     font-size: 14px;
 }
 
 .nsf-logo {
-    max-height: 70px; /* Increased to 70px */
+    max-height: 70px;
 }
 
 @media (max-width: 768px) {
     header .container {
-        flex-direction: column; /* Stack logo and nav */
+        flex-direction: column;
         align-items: center;
     }
     header h1 {
@@ -250,5 +254,8 @@ footer p {
     }
     #hero {
         min-height: 450px;
+    }
+    #hero .container {
+        margin-top: 30px; /* Slightly less offset on mobile */
     }
 }
