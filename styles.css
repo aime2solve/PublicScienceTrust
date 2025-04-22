@@ -50,14 +50,15 @@ nav ul li a {
 }
 
 #hero, #categories, #about, #impact, #contact, #about-details {
-    padding: 50px 20px; /* Reduced padding-top from 100px to 50px */
-    scroll-margin-top: 50px; /* Adjusted to match padding */
+    padding: 50px 20px;
+    scroll-margin-top: 50px;
 }
 
 #hero {
-    background: url('https://via.placeholder.com/1200x400') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Header.png') no-repeat center/cover;
     text-align: center;
     margin-top: 80px;
+    color: white;
 }
 
 #hero h2 {
@@ -78,6 +79,7 @@ nav ul li a {
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -192,6 +194,22 @@ footer p {
     margin: 5px 0;
 }
 
+.partnership {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.partnership p {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.nsf-logo {
+    max-height: 40px;
+}
+
 @media (max-width: 768px) {
     header h1, nav ul {
         float: none;
@@ -200,5 +218,11 @@ footer p {
     nav ul li {
         display: block;
         margin: 10px 0;
+    }
+    .partnership {
+        flex-direction: column;
+    }
+    .partnership p {
+        margin-bottom: 5px;
     }
 }
