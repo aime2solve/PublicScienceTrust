@@ -47,10 +47,14 @@ nav ul li a {
     font-weight: bold;
 }
 
+#hero, #categories, #about, #impact, #contact {
+    padding: 100px 20px 60px; /* Added padding-top to account for fixed header */
+    scroll-margin-top: 100px; /* Ensures scroll lands below header */
+}
+
 #hero {
     background: url('https://via.placeholder.com/1200x400') no-repeat center/cover;
     text-align: center;
-    padding: 100px 20px;
     margin-top: 80px;
 }
 
@@ -79,7 +83,6 @@ nav ul li a {
 }
 
 #categories {
-    padding: 60px 20px;
     background: #f4f4f4;
     text-align: center;
 }
@@ -123,7 +126,6 @@ nav ul li a {
 }
 
 #about, #impact, #contact {
-    padding: 60px 20px;
     text-align: center;
 }
 
