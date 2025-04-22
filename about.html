@@ -79,6 +79,33 @@
     </footer>
 
     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        // Debug: Log to check if elements are found
+        if (!hamburger || !navMenu) {
+            console.error('Hamburger or navMenu not found:', { hamburger, navMenu });
+            return;
+        }
+
+        // Toggle menu on click
+        hamburger.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent any default behavior
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+            console.log('Hamburger clicked, menu toggled');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('open');
+                console.log('Nav link clicked, menu closed');
+            });
+        });
+
         // Debug NSF logo loading issue
         const nsfLogo = document.getElementById('nsf-logo');
         nsfLogo.addEventListener('error', () => {
@@ -87,6 +114,7 @@
         nsfLogo.addEventListener('load', () => {
             console.log('NSF logo loaded successfully.');
         });
-    </script>
+    });
+</script>
 </body>
 </html>

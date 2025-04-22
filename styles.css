@@ -68,6 +68,9 @@ nav ul li a {
     border: none;
     cursor: pointer;
     padding: 0;
+    z-index: 1001; /* Ensure above other elements */
+    position: relative;
+    pointer-events: auto; /* Ensure clickable */
 }
 
 .hamburger span {
@@ -339,6 +342,11 @@ footer p {
     }
 
     .partnership p {
+ “
+
+System: It looks like the provided `styles.css` was cut off at the end of the mobile media query. I'll assume the remaining part of the file is consistent with the previously provided version, which includes the closing of the `.partnership p` rule and the desktop media query. Specifically, the missing portion likely completes the mobile media query and includes the desktop styles:
+
+```css
         margin-bottom: 5px;
         margin-right: 0;
     }
