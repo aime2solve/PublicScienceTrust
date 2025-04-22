@@ -132,13 +132,13 @@ nav ul li a {
 .btn {
     background: #00cc99;
     color: white;
-    padding: 7px 18px;
+    padding: 6px 16px; /* Smaller */
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px; /* Rounder corners */
     font-weight: bold;
     display: inline-block;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 12px; /* Smaller */
 }
 
 .btn:hover {
@@ -194,13 +194,13 @@ nav ul li a {
 
 .donation-type {
     display: flex;
-    gap: 16px; /* Increased for more space between buttons */
+    gap: 20px; /* More space between radio buttons */
     align-items: center;
     padding: 5px 0;
 }
 
 .donation-type label {
-    font-size: 12px; /* Slightly smaller */
+    font-size: 11px; /* Smaller */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -208,24 +208,24 @@ nav ul li a {
 
 .donation-type input[type="radio"] {
     margin-right: 4px;
-    width: 12px; /* Smaller radio button */
-    height: 12px;
-    border-radius: 8px; /* More rounded corners */
+    width: 10px; /* Even smaller */
+    height: 10px;
+    border-radius: 10px; /* Rounder corners */
 }
 
 .donation-amount {
     width: 100%;
-    padding: 7px;
-    border-radius: 5px;
+    padding: 6px; /* Smaller */
+    border-radius: 10px; /* Rounder corners */
     border: 1px solid #ccc;
-    font-size: 13px;
+    font-size: 12px; /* Smaller */
 }
 
 .donate-btn {
-    padding: 7px 18px;
-    font-size: 13px;
+    padding: 6px 16px; /* Smaller */
+    font-size: 12px; /* Smaller */
     align-self: start;
-    border-radius: 8px; /* More rounded corners for Donate button */
+    border-radius: 10px; /* Rounder corners */
 }
 
 /* Progress tracker */
@@ -369,7 +369,8 @@ footer p {
 
 .nsf-logo {
     max-height: 100px;
-    border: 1px solid #999; /* Kept border, removed background */
+    border: 1px solid #999;
+    background: transparent !important; /* Explicitly transparent */
 }
 
 /* Mobile styles */
@@ -450,7 +451,7 @@ footer p {
 
     .donation-type {
         flex-direction: column;
-        gap: 10px; /* Adjusted for mobile */
+        gap: 12px; /* Slightly more space for mobile */
         padding: 5px 0;
     }
 
