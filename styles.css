@@ -166,40 +166,36 @@ nav ul li a {
     background: white;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    min-height: 350px; /* Ensure consistent height */
-    padding: 20px;
-}
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1; /* Expand to fill available space */
+    display: grid;
+    grid-template-rows: 40px 80px 40px 40px 40px; /* Fixed heights for each component */
+    padding: 15px;
+    align-content: start; /* Ensure content starts at top */
 }
 
 .category-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; /* Prevent title wrapping */
+    padding: 5px 0;
 }
 
 .category-card p {
-    font-size: 16px;
-    margin-bottom: 15px;
-    flex-grow: 1; /* Push subsequent elements down */
+    font-size: 14px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
     -webkit-box-orient: vertical;
+    padding: 5px 0;
+    line-height: 1.4;
 }
 
 .donation-type {
-    margin-bottom: 15px;
     display: flex;
     gap: 15px;
+    align-items: center;
+    padding: 5px 0;
 }
 
 .donation-type label {
@@ -215,15 +211,16 @@ nav ul li a {
 
 .donation-amount {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 14px;
 }
 
 .donate-btn {
-    margin-top: auto; /* Align button at bottom */
-    align-self: flex-start; /* Keep button left-aligned */
+    padding: 8px 20px;
+    font-size: 14px;
+    align-self: start; /* Left-align button */
 }
 
 /* Progress tracker */
@@ -450,6 +447,7 @@ footer p {
     .donation-type {
         flex-direction: column;
         gap: 10px;
+        padding: 5px 0;
     }
 
     .donation-type label {
@@ -457,7 +455,7 @@ footer p {
     }
 
     .category-card {
-        min-height: 400px; /* Adjust for mobile stacking */
+        grid-template-rows: 40px 100px 60px 40px 40px; /* Adjusted for mobile */
     }
 }
 
