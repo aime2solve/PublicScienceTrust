@@ -197,11 +197,11 @@ nav ul li a {
     gap: 24px;
     align-items: center;
     padding: 5px 0;
-    justify-content: center; /* Center-justify labels */
+    justify-content: center;
 }
 
 .donation-type label {
-    font-size: 12px; /* Larger font */
+    font-size: 12px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -370,7 +370,8 @@ footer p {
 
 .nsf-logo {
     max-height: 100px;
-    background: transparent !important; /* No border */
+    background: transparent !important;
+    filter: invert(100%) hue-rotate(180deg); /* Fallback to make black text white */
 }
 
 /* Mobile styles */
