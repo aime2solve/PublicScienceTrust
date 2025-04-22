@@ -371,7 +371,6 @@ footer p {
 .nsf-logo {
     max-height: 100px;
     background: transparent !important;
-    filter: invert(100%) hue-rotate(180deg); /* Fallback to make black text white */
 }
 
 /* Mobile styles */
