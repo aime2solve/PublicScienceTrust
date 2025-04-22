@@ -8,7 +8,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: #333;
-    top: 0; /* Ensure no default margins cause gaps */
+    margin: 0; /* Eliminate default margins */
+    padding: 0;
+    top: 0;
 }
 
 .container {
@@ -56,18 +58,18 @@ nav ul li a {
 }
 
 #about-details {
-    padding: 80px 20px; /* Increased padding-top for title visibility */
+    padding: 80px 20px;
     scroll-margin-top: 80px;
 }
 
 #hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Header.png') no-repeat center/cover;
     text-align: center;
-    padding-top: 130px; /* Increased to offset header and remove white line */
+    padding-top: 100px; /* Adjusted to position content below header */
     padding-bottom: 50px;
-    min-height: 500px; /* Increased height for taller hero */
+    min-height: 600px; /* Increased for taller hero */
     color: white;
-    margin-top: 0; /* Remove margin to eliminate white line */
+    margin-top: 0; /* No gap above hero */
 }
 
 #hero h2 {
@@ -216,7 +218,7 @@ footer p {
 }
 
 .nsf-logo {
-    max-height: 30px; /* Small size for desktop */
+    max-height: 30px;
 }
 
 @media (max-width: 768px) {
@@ -235,6 +237,6 @@ footer p {
         margin-bottom: 5px;
     }
     #hero {
-        min-height: 400px; /* Slightly smaller height for mobile */
+        min-height: 450px; /* Adjusted for mobile */
     }
 }
