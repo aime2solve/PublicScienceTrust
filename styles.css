@@ -29,6 +29,8 @@ header {
 header h1 {
     float: left;
     font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
 }
 
 nav ul {
@@ -47,9 +49,9 @@ nav ul li a {
     font-weight: bold;
 }
 
-#hero, #categories, #about, #impact, #contact {
-    padding: 100px 20px 60px; /* Added padding-top to account for fixed header */
-    scroll-margin-top: 100px; /* Ensures scroll lands below header */
+#hero, #categories, #about, #impact, #contact, #about-details {
+    padding: 50px 20px; /* Reduced padding-top from 100px to 50px */
+    scroll-margin-top: 50px; /* Adjusted to match padding */
 }
 
 #hero {
@@ -125,13 +127,26 @@ nav ul li a {
     border: 1px solid #ccc;
 }
 
-#about, #impact, #contact {
+#about, #impact, #contact, #about-details {
     text-align: center;
 }
 
-#about h2, #impact h2, #contact h2 {
+#about h2, #impact h2, #contact h2, #about-details h2 {
     font-size: 32px;
     margin-bottom: 20px;
+}
+
+#about-details h3 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+}
+
+#about-details ul {
+    text-align: left;
+    max-width: 600px;
+    margin: 10px auto;
+    list-style: disc;
+    padding-left: 20px;
 }
 
 .impact-stats {
@@ -144,6 +159,8 @@ nav ul li a {
 .impact-stats div {
     font-size: 18px;
     margin: 10px;
+    max-width: 300px;
+    text-align: left;
 }
 
 form {
