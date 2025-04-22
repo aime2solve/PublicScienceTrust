@@ -229,13 +229,8 @@ footer p {
 
 .nsf-logo {
     max-height: 100px;
-    transition: opacity 0.3s;
     background: #ccc; /* Fallback if image fails */
     border: 1px solid #999; /* Border to show logo area */
-}
-
-.nsf-logo:hover {
-    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
