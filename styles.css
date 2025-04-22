@@ -78,7 +78,7 @@ nav ul li a {
 }
 
 #hero .container {
-    margin-top: 70px; /* Lower text by 70px */
+    margin-top: 70px;
 }
 
 #hero h2 {
@@ -219,6 +219,7 @@ footer p {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    min-height: 100px; /* Ensure logo area is visible */
 }
 
 .partnership p {
@@ -228,11 +229,11 @@ footer p {
 
 .nsf-logo {
     max-height: 100px;
-    transition: opacity 0.3s; /* Smooth hover effect */
+    transition: opacity 0.3s;
 }
 
 .nsf-logo:hover {
-    opacity: 0.8; /* Subtle hover indication */
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
