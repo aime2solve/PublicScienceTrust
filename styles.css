@@ -132,13 +132,13 @@ nav ul li a {
 .btn {
     background: #00cc99;
     color: white;
-    padding: 5px 14px; /* Smaller */
+    padding: 5px 14px;
     text-decoration: none;
-    border-radius: 12px; /* Rounder corners */
+    border-radius: 12px;
     font-weight: bold;
     display: inline-block;
     cursor: pointer;
-    font-size: 11px; /* Smaller */
+    font-size: 11px;
 }
 
 .btn:hover {
@@ -194,13 +194,14 @@ nav ul li a {
 
 .donation-type {
     display: flex;
-    gap: 24px; /* More noticeable spacing */
+    gap: 24px;
     align-items: center;
     padding: 5px 0;
+    justify-content: center; /* Center-justify labels */
 }
 
 .donation-type label {
-    font-size: 10px; /* Smaller */
+    font-size: 12px; /* Larger font */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -208,24 +209,24 @@ nav ul li a {
 
 .donation-type input[type="radio"] {
     margin-right: 4px;
-    width: 8px; /* Much smaller */
+    width: 8px;
     height: 8px;
-    border-radius: 12px; /* Very round */
+    border-radius: 12px;
 }
 
 .donation-amount {
     width: 100%;
-    padding: 5px; /* Smaller */
-    border-radius: 12px; /* Rounder corners */
+    padding: 5px;
+    border-radius: 12px;
     border: 1px solid #ccc;
-    font-size: 11px; /* Smaller */
+    font-size: 11px;
 }
 
 .donate-btn {
-    padding: 5px 14px; /* Smaller */
-    font-size: 11px; /* Smaller */
+    padding: 5px 14px;
+    font-size: 11px;
     align-self: start;
-    border-radius: 12px; /* Rounder corners */
+    border-radius: 12px;
 }
 
 /* Progress tracker */
@@ -369,8 +370,7 @@ footer p {
 
 .nsf-logo {
     max-height: 100px;
-    border: 1px solid #999;
-    background: transparent !important;
+    background: transparent !important; /* No border */
 }
 
 /* Mobile styles */
@@ -451,8 +451,9 @@ footer p {
 
     .donation-type {
         flex-direction: column;
-        gap: 14px; /* More space for mobile */
+        gap: 14px;
         padding: 5px 0;
+        justify-content: center;
     }
 
     .donation-type label {
