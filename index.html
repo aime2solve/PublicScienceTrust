@@ -11,6 +11,10 @@
     <header>
         <div class="container">
             <h1>PUBLIC SCIENCE TRUST</h1>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -192,7 +196,7 @@
             <div class="partnership">
                 <p>In partnership with</p>
                 <!-- Ensure logo-NSF.svg is in the same folder; if in 'images/', use src="images/logo-NSF.svg" -->
-                <img src="logo-NSF.svg" alt="National Science Foundation Logo" class="nsf-logo" id="nsf-logo">
+                <img src="logo-NSF.svg" alt="National Science Foundation Logo" class="nsf-logo">
             </div>
         </div>
     </footer>
@@ -204,15 +208,6 @@
                 const amount = button.previousElementSibling.value;
                 alert(`Thank you for donating $${amount} to this category! (This is a demo.)`);
             });
-        });
-
-        // Debug NSF logo loading issue
-        const nsfLogo = document.getElementById('nsf-logo');
-        nsfLogo.addEventListener('error', () => {
-            console.error('Failed to load NSF logo. Check if logo-NSF.svg is in the correct folder (same as index.html) or update path to "images/logo-NSF.svg" if in a subdirectory.');
-        });
-        nsfLogo.addEventListener('load', () => {
-            console.log('NSF logo loaded successfully.');
         });
     </script>
 </body>
