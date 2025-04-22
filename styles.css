@@ -68,9 +68,9 @@ nav ul li a {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001; /* Ensure above other elements */
+    z-index: 1002;
     position: relative;
-    pointer-events: auto; /* Ensure clickable */
+    pointer-events: auto;
 }
 
 .hamburger span {
@@ -180,12 +180,83 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
+.donation-type {
+    margin-bottom: 15px;
+}
+
+.donation-type label {
+    margin-right: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.donation-type input[type="radio"] {
+    margin-right: 5px;
+}
+
 .donation-amount {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+/* Progress tracker */
+.tracker {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tracker h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#progress-bar {
+    background: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+#progress-fill {
+    background: #00cc99;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+#progress-text {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#steward-message {
+    color: #006666;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Incentives */
+.incentives {
+    margin: 20px 0;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.incentives ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.incentives li {
+    margin-bottom: 10px;
 }
 
 /* About, Impact, Contact, About Details */
@@ -300,6 +371,7 @@ footer p {
         width: 100%;
         background: #006666;
         z-index: 999;
+        pointer-events: auto;
     }
 
     .nav-menu.active {
@@ -318,6 +390,7 @@ footer p {
 
     nav ul li a {
         font-size: 18px;
+        pointer-events: auto;
     }
 
     #hero {
@@ -342,17 +415,17 @@ footer p {
     }
 
     .partnership p {
- “
-
-System: It looks like the provided `styles.css` was cut off at the end of the mobile media query. I'll assume the remaining part of the file is consistent with the previously provided version, which includes the closing of the `.partnership p` rule and the desktop media query. Specifically, the missing portion likely completes the mobile media query and includes the desktop styles:
-
-```css
         margin-bottom: 5px;
         margin-right: 0;
     }
 
     .nsf-logo {
         max-height: 80px;
+    }
+
+    .donation-type label {
+        display: block;
+        margin-bottom: 10px;
     }
 }
 
