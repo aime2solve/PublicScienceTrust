@@ -22,22 +22,26 @@ body {
 header {
     background: #006666;
     color: white;
-    padding: 20px 0;
+    padding: 15px 0; /* Reduced for compact height */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
 
+header .container {
+    display: flex; /* Flexbox for vertical centering */
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Logo left, nav right */
+}
+
 header h1 {
-    float: left;
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
 
 nav ul {
-    float: right;
     list-style: none;
 }
 
@@ -65,12 +69,12 @@ nav ul li a {
 #hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Header.png') no-repeat center/cover;
     text-align: center;
-    min-height: 600px; /* Taller hero */
+    min-height: 600px;
     color: white;
-    margin-top: 0; /* No gap above hero */
-    display: flex; /* Center content vertically */
-    align-items: center; /* Vertical centering */
-    padding: 50px 20px; /* Balanced padding */
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
 }
 
 #hero h2 {
@@ -214,17 +218,23 @@ footer p {
 }
 
 .partnership p {
-    margin-right: 10px;
+    margin-right: 15px; /* Increased for larger logo */
     font-size: 14px;
 }
 
 .nsf-logo {
-    max-height: 40px; /* Increased to 40px */
+    max-height: 70px; /* Increased to 70px */
 }
 
 @media (max-width: 768px) {
-    header h1, nav ul {
-        float: none;
+    header .container {
+        flex-direction: column; /* Stack logo and nav */
+        align-items: center;
+    }
+    header h1 {
+        margin-bottom: 10px;
+    }
+    nav ul {
         text-align: center;
     }
     nav ul li {
@@ -236,8 +246,9 @@ footer p {
     }
     .partnership p {
         margin-bottom: 5px;
+        margin-right: 0;
     }
     #hero {
-        min-height: 450px; /* Adjusted for mobile */
+        min-height: 450px;
     }
 }
