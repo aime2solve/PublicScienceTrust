@@ -7,23 +7,32 @@
     <link rel="stylesheet" href="styles.css?v=4">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Banner Styles */
-        #banner {
-            background: #007bff !important; /* Ensure background isn’t overridden */
-            color: #ffffff !important; /* White text */
-            padding: 1rem;
-            text-align: center;
-            width: 100%;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            line-height: 1.5;
-        }
-        #banner p {
-            margin: 0;
-        }
-    </style>
+    /* Banner Styles */
+    #banner {
+        background: #007bff !important;
+        color: #ffffff !important;
+        padding: 1rem;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        line-height: 1.5;
+    }
+    #banner p {
+        margin: 0;
+    }
+    /* Adjust header to appear below banner */
+    header {
+        margin-top: 50px !important; /* Matches banner height (1rem padding * 2 + 1.5rem line-height) */
+        z-index: 9999 !important; /* Ensure header is below banner */
+    }
+</style>
 </head>
 <body>
     <div id="banner">
