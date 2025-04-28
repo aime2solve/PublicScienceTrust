@@ -9,19 +9,20 @@
     <style>
         /* Banner Styles */
         #banner {
-            background: #007bff;
-            color: #fff;
+            background: #007bff !important; /* Ensure background isn’t overridden */
+            color: #ffffff !important; /* White text */
             padding: 1rem;
             text-align: center;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
+            z-index: 10000; /* High z-index to appear above all elements */
             font-family: 'Open Sans', sans-serif;
             font-size: 1rem;
             font-weight: 700;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            line-height: 1.5;
         }
         #banner p {
             margin: 0;
