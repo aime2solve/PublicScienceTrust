@@ -4,8 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Public Science Trust - Support NSF Research</title>
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:,">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: #f4f4f4;
+            padding: 1rem 0;
+        }
+        header h1 {
+            font-size: 1.8rem;
+        }
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section */
+        #hero {
+            background: #e9ecef;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        #hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Categories Section */
+        #categories {
+            padding: 3rem 0;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .category-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .donation-type {
+            margin: 1rem 0;
+        }
+        .donation-type label {
+            margin: 0 0.5rem;
+        }
+        .donation-amount {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .tracker {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        #progress-bar {
+            background: #ddd;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            background: #007bff;
+            height: 100%;
+            transition: width 0.3s;
+        }
+
+        /* Other Sections */
+        #about, #impact, #contact {
+            padding: 3rem 0;
+            background: #f9f9f9;
+        }
+        .impact-stats div {
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        #contact input, #contact textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #contact textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #f4f4f4;
+                padding: 1rem;
+                z-index: 999;
+            }
+            .nav-menu.active {
+                display: block;
+            }
+            .nav-menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+            #hero h2 {
+                font-size: 1.8rem;
+            }
+            #hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -37,180 +249,180 @@
     </section>
 
     <section id="categories">
-    <div class="container">
-        <h2>Direct Your Impact</h2>
-        <p>Select a category to support NSF-aligned projects that advance science and education.</p>
-        <div id="science-steward-tracker" class="tracker">
-            <h3>Science Steward Progress</h3>
-            <p>Donate $25 to all 10 categories to become a Science Steward!</p>
-            <div id="progress-bar">
-                <div id="progress-fill" style="width: 0%;"></div>
+        <div class="container">
+            <h2>Direct Your Impact</h2>
+            <p>Select a category to support NSF-aligned projects that advance science and education.</p>
+            <div id="science-steward-tracker" class="tracker">
+                <h3>Science Steward Progress</h3>
+                <p>Donate $25 to all 10 categories to become a Science Steward!</p>
+                <div id="progress-bar">
+                    <div id="progress-fill" style="width: 0%;"></div>
+                </div>
+                <p id="progress-text">0/10 categories donated</p>
+                <p id="steward-message" style="display: none;">Congratulations! You’re a Science Steward!</p>
             </div>
-            <p id="progress-text">0/10 categories donated</p>
-            <p id="steward-message" style="display: none;">Congratulations! You’re a Science Steward!</p>
+            <div class="incentives">
+                <p><strong>Monthly Subscriber Benefits:</strong></p>
+                <ul>
+                    <li>Access to digital science art.</li>
+                    <li>Monthly research newsletter with project updates.</li>
+                    <li>Discounts to science museums and STEM venues.</li>
+                </ul>
+            </div>
+            <div class="category-grid">
+                <div class="category-card" data-category="fundamental-science">
+                    <h3>Fundamental Science</h3>
+                    <p>Uncover the laws of nature through physics, chemistry, and math.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-fundamental-science" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-fundamental-science" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="biological-discovery">
+                    <h3>Biological Discovery</h3>
+                    <p>Advance research in genetics, ecosystems, and biodiversity.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-biological-discovery" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-biological-discovery" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="engineering-innovation">
+                    <h3>Engineering Innovation</h3>
+                    <p>Develop sustainable technologies for global challenges.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-engineering-innovation" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-engineering-innovation" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="computing-ai">
+                    <h3>Computing and AI</h3>
+                    <p>Fuel advances in AI, cybersecurity, and computing.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-computing-ai" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-computing-ai" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="geosciences-climate">
+                    <h3>Geosciences and Climate Solutions</h3>
+                    <p>Address climate change and natural hazards.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-geosciences-climate" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-geosciences-climate" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="social-behavioral">
+                    <h3>Social and Behavioral Sciences</h3>
+                    <p>Explore human behavior and societal dynamics.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type        <input type="radio" name="donation-type-social-behavioral" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-social-behavioral" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="stem-education">
+                    <h3>STEM Education and Workforce</h3>
+                    <p>Inspire and train the next generation of scientists.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-stem-education" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-stem-education" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="cross-disciplinary">
+                    <h3>Cross-Disciplinary Research</h3>
+                    <p>Support bold, integrative science projects.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-cross-disciplinary" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-cross-disciplinary" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="innovation-entrepreneurship">
+                    <h3>Innovation and Entrepreneurship</h3>
+                    <p>Translate research into real-world solutions.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-innovation-entrepreneurship" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-innovation-entrepreneurship" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+                <div class="category-card" data-category="international-big-science">
+                    <h3>International and Big Science</h3>
+                    <p>Fund global collaborations and major facilities.</p>
+                    <div class="donation-type">
+                        <label><input type="radio" name="donation-type-international-big-science" value="one-time" checked> One-Time</label>
+                        <label><input type="radio" name="donation-type-international-big-science" value="monthly"> Monthly</label>
+                    </div>
+                    <select class="donation-amount">
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="100">$100</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button class="btn donate-btn">Donate</button>
+                </div>
+            </div>
         </div>
-        <div class="incentives">
-            <p><strong>Monthly Subscriber Benefits:</strong></p>
-            <ul>
-                <li>Access to digital science art.</li>
-                <li>Monthly research newsletter with project updates.</li>
-                <li>Discounts to science museums and STEM venues.</li>
-            </ul>
-        </div>
-        <div class="category-grid">
-            <div class="category-card" data-category="fundamental-science">
-                <h3>Fundamental Science</h3>
-                <p>Uncover the laws of nature through physics, chemistry, and math.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-fundamental-science" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-fundamental-science" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="biological-discovery">
-                <h3>Biological Discovery</h3>
-                <p>Advance research in genetics, ecosystems, and biodiversity.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-biological-discovery" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-biological-discovery" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="engineering-innovation">
-                <h3>Engineering Innovation</h3>
-                <p>Develop sustainable technologies for global challenges.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-engineering-innovation" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-engineering-innovation" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="computing-ai">
-                <h3>Computing and AI</h3>
-                <p>Fuel advances in AI, cybersecurity, and computing.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-computing-ai" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-computing-ai" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="geosciences-climate">
-                <h3>Geosciences and Climate Solutions</h3>
-                <p>Address climate change and natural hazards.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-geosciences-climate" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-geosciences-climate" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="social-behavioral">
-                <h3>Social and Behavioral Sciences</h3>
-                <p>Explore human behavior and societal dynamics.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-social-behavioral" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-social-behavioral" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="stem-education">
-                <h3>STEM Education and Workforce</h3>
-                <p>Inspire and train the next generation of scientists.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-stem-education" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-stem-education" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="cross-disciplinary">
-                <h3>Cross-Disciplinary Research</h3>
-                <p>Support bold, integrative science projects.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-cross-disciplinary" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-cross-disciplinary" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="innovation-entrepreneurship">
-                <h3>Innovation and Entrepreneurship</h3>
-                <p>Translate research into real-world solutions.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-innovation-entrepreneurship" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-innovation-entrepreneurship" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-            <div class="category-card" data-category="international-big-science">
-                <h3>International and Big Science</h3>
-                <p>Fund global collaborations and major facilities.</p>
-                <div class="donation-type">
-                    <label><input type="radio" name="donation-type-international-big-science" value="one-time" checked> One-Time</label>
-                    <label><input type="radio" name="donation-type-international-big-science" value="monthly"> Monthly</label>
-                </div>
-                <select class="donation-amount">
-                    <option value="25">$25</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <button class="btn donate-btn">Donate</button>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <section id="about">
         <div class="container">
@@ -248,117 +460,114 @@
     </section>
 
     <footer>
-    <div class="container">
-        <p>© 2025 Public Science Trust. All rights reserved. 501(c)(3) Nonprofit.</p>
-        <p>Email: info@publicsciencetrust.org | Phone: (603) 555-1234</p>
-    </div>
-</footer>
+        <div class="container">
+            <p>© 2025 Public Science Trust. All rights reserved. 501(c)(3) Nonprofit.</p>
+            <p>Email: info@publicsciencetrust.org | Phone: (603) 555-1234</p>
+        </div>
+    </footer>
 
     <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
 
-    // Debug: Log element selection
-    if (!hamburger || !navMenu) {
-        console.error('Hamburger or navMenu not found:', { hamburger, navMenu });
-        return;
-    }
-    console.log('Hamburger and navMenu found:', { hamburger, navMenu });
-
-    // Toggle menu function
-    const toggleMenu = (e) => {
-        e.preventDefault();
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('open');
-        console.log('Hamburger toggled:', {
-            eventType: e.type,
-            menuActive: navMenu.classList.contains('active')
-        });
-    };
-
-    // Bind hamburger events
-    const bindHamburgerEvents = () => {
-        // Remove existing listeners to prevent duplicates
-        hamburger.removeEventListener('click', toggleMenu);
-        hamburger.removeEventListener('mousedown', toggleMenu);
-        hamburger.removeEventListener('touchstart', toggleMenu);
-        // Add listeners
-        hamburger.addEventListener('click', toggleMenu);
-        hamburger.addEventListener('touchstart', toggleMenu);
-        console.log('Hamburger event listeners bound');
-    };
-
-    // Initial binding
-    bindHamburgerEvents();
-
-    // Rebind on window resize
-    window.addEventListener('resize', () => {
-        console.log('Window resized, rebinding hamburger events');
-        bindHamburgerEvents();
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('open');
-            console.log('Nav link clicked, menu closed');
-        });
-    });
-
-    // Donation tracking for Science Steward
-    const donationTracker = {
-        'fundamental-science': { amount: 0, type: 'one-time' },
-        'biological-discovery': { amount: 0, type: 'one-time' },
-        'engineering-innovation': { amount: 0, type: 'one-time' },
-        'computing-ai': { amount: 0, type: 'one-time' },
-        'geosciences-climate': { amount: 0, type: 'one-time' },
-        'social-behavioral': { amount: 0, type: 'one-time' },
-        'stem-education': { amount: 0, type: 'one-time' },
-        'cross-disciplinary': { amount: 0, type: 'one-time' },
-        'innovation-entrepreneurship': { amount: 0, type: 'one-time' },
-        'international-big-science': { amount: 0, type: 'one-time' }
-    };
-
-    // Update progress bar
-    const updateProgress = () => {
-        const categoriesDonated = Object.values(donationTracker).filter(
-            donation => donation.amount >= 25
-        ).length;
-        const progressPercentage = (categoriesDonated / 10) * 100;
-        document.getElementById('progress-fill').style.width = `${progressPercentage}%`;
-        document.getElementById('progress-text').textContent = `${categoriesDonated}/10 categories donated`;
-        if (categoriesDonated === 10) {
-            document.getElementById('steward-message').style.display = 'block';
+        // Debug: Log element selection
+        if (!hamburger || !navMenu) {
+            console.error('Hamburger or navMenu not found:', { hamburger, navMenu });
+            return;
         }
-    };
+        console.log('Hamburger and navMenu found:', { hamburger, navMenu });
 
-    // Donation buttons
-    document.querySelectorAll('.donate-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const card = button.closest('.category-card');
-            const category = card.dataset.category;
-            const amount = button.previousElementSibling.value;
-            const donationType = card.querySelector(`input[name="donation-type-${category}"]:checked`).value;
+        // Toggle menu function
+        const toggleMenu = (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent event bubbling
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+            console.log('Hamburger toggled:', {
+                eventType: e.type,
+                menuActive: navMenu.classList.contains('active')
+            });
+        };
 
-            // Update tracker
-            donationTracker[category] = {
-                amount: amount === 'custom' ? 0 : parseInt(amount),
-                type: donationType
-            };
+        // Bind hamburger events
+        const bindHamburgerEvents = () => {
+            // Remove existing listeners to prevent duplicates
+            hamburger.removeEventListener('click', toggleMenu);
+            hamburger.removeEventListener('touchstart', toggleMenu);
+            // Add listeners
+            hamburger.addEventListener('click', toggleMenu, { passive: false });
+            hamburger.addEventListener('touchstart', toggleMenu, { passive: false });
+            console.log('Hamburger event listeners bound');
+        };
 
-            // Update progress
-            updateProgress();
+        // Initial binding
+        bindHamburgerEvents();
 
-            // Alert with incentive info
-            const incentiveMessage = donationType === 'monthly'
-                ? '\nAs a monthly subscriber, you’ll receive access to digital science art, a monthly research newsletter, and discounts to science museums and STEM venues!'
-                : '';
-            alert(`Thank you for your ${donationType} donation of $${amount} to ${card.querySelector('h3').textContent}! (This is a demo.)${incentiveMessage}`);
+        // Rebind on window resize
+        window.addEventListener('resize', bindHamburgerEvents);
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('open');
+                console.log('Nav link clicked, menu closed');
+            });
+        });
+
+        // Donation tracking for Science Steward
+        const donationTracker = {
+            'fundamental-science': { amount: 0, type: 'one-time' },
+            'biological-discovery': { amount: 0, type: 'one-time' },
+            'engineering-innovation': { amount: 0, type: 'one-time' },
+            'computing-ai': { amount: 0, type: 'one-time' },
+            'geosciences-climate': { amount: 0, type: 'one-time' },
+            'social-behavioral': { amount: 0, type: 'one-time' },
+            'stem-education': { amount: 0, type: 'one-time' },
+            'cross-disciplinary': { amount: 0, type: 'one-time' },
+            'innovation-entrepreneurship': { amount: 0, type: 'one-time' },
+            'international-big-science': { amount: 0, type: 'one-time' }
+        };
+
+        // Update progress bar
+        const updateProgress = () => {
+            const categoriesDonated = Object.values(donationTracker).filter(
+                donation => donation.amount >= 25
+            ).length;
+            const progressPercentage = (categoriesDonated / 10) * 100;
+            document.getElementById('progress-fill').style.width = `${progressPercentage}%`;
+            document.getElementById('progress-text').textContent = `${categoriesDonated}/10 categories donated`;
+            if (categoriesDonated === 10) {
+                document.getElementById('steward-message').style.display = 'block';
+            }
+        };
+
+        // Donation buttons
+        document.querySelectorAll('.donate-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.category-card');
+                const category = card.dataset.category;
+                const amount = button.previousElementSibling.value;
+                const donationType = card.querySelector(`input[name="donation-type-${category}"]:checked`).value;
+
+                // Update tracker
+                donationTracker[category] = {
+                    amount: amount === 'custom' ? 0 : parseInt(amount),
+                    type: donationType
+                };
+
+                // Update progress
+                updateProgress();
+
+                // Alert with incentive info
+                const incentiveMessage = donationType === 'monthly'
+                    ? '\nAs a monthly subscriber, you’ll receive access to digital science art, a monthly research newsletter, and discounts to science museums and STEM venues!'
+                    : '';
+                alert(`Thank you for your ${donationType} donation of $${amount} to ${card.querySelector('h3').textContent}! (This is a demo.)${incentiveMessage}`);
+            });
         });
     });
-});
-</script>
+    </script>
 </body>
 </html>
